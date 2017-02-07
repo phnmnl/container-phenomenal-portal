@@ -10,6 +10,7 @@ PhenoMeNal Portal for Cloud Research Environment Deployment
 
 ## Description
 
+The PhenoMeNal Virtual Research Environment (VRE), aka. Virtual Research Community (VRC) will be the central access point for all users. This is the online portal enabling user interactions, virtual machine distribution, access to compute resources and information exchange. Users can search for existing public datasets and perform online analysis. The VRC will interact with the PhenoMeNal middleware to federate on-demand job requests between provisioned data, compute, and analysis resources. Expert help and training will be available through the VRC.
 
 
 ## Key features
