@@ -49,7 +49,7 @@ Screen shots obtained from the original PhenoMeNal Portal page.
 For local individual installation:
 
 ```bash
-docker pull docker-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
+docker pull container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
 ```
 
 ## Usage Instructions
@@ -57,7 +57,7 @@ docker pull docker-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal
 For direct docker usage:
 
 ```bash
-docker run -d -p 3000:80 -it portal:0.1.19 nginx -g 'daemon off;'
+docker run -d -p 3000:80 -it container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal nginx -g 'daemon off;'
 ```
 
 ## Publications
