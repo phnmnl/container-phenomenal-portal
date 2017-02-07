@@ -1,12 +1,12 @@
 
-![Logo](portal_logo.gif)
+![Logo](portal_logo.png)
 
 # PhenoMeNal Portal
 Version: 0.2.2
 
 ## Short Description
 
-Open source software for identifying and quantifying metabolites in NMR spectra.
+PhenoMeNal Portal for Cloud Research Environment Deployment
 
 ## Description
 
