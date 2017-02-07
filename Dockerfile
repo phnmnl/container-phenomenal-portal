@@ -22,7 +22,9 @@ RUN npm install -g @angular/cli@latest
 #Clone the project
 RUN git clone https://github.com/phnmnl/ng2-phenomenal-portal.git
 WORKDIR /ng2-phenomenal-portal
-RUN npm install --save-dev @angular/cli@latest && npm install && ng build --prod
+RUN npm install --save-dev @angular/cli@latest 
+RUN npm install 
+RUN ng build --prod
 RUN cp -r dist/* /usr/share/nginx/html
 COPY ./default /etc/nginx/sites-enabled
 EXPOSE 80
