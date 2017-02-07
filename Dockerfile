@@ -5,7 +5,13 @@
 FROM node:latest
 
 # File Author / Maintainer
-MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
+MAINTAINER Sijin He ( sijin@ebi.ac.uk )
+
+ENV TOOL_VERSION=0.2.2
+ENV CONTAINER_VERSION=0.2.2
+
+LABEL version="${CONTAINER_VERSION}"
+LABEL tool_version="${TOOL_VERSION}"
 
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git
 RUN npm uninstall @angular/cli -g
