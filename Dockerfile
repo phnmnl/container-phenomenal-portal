@@ -7,11 +7,14 @@ FROM node:latest
 # File Author / Maintainer
 MAINTAINER Sijin He ( sijin@ebi.ac.uk )
 
-ENV TOOL_VERSION=0.2.2
-ENV CONTAINER_VERSION=0.2.2
-
-LABEL version="${CONTAINER_VERSION}"
-LABEL tool_version="${TOOL_VERSION}"
+LABEL Description="Metadata backend for the PhenoMeNal Portal"
+LABEL software="PhenoMeNal Portal"
+LABEL software.version="1.0.0-alpha.0"
+LABEL version="0.3"
+LABEL website="https://portal.phenomenal-h2020.eu/"
+LABEL documentation="https://portal.phenomenal-h2020.eu/"
+LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
+LABEL tags="Cloud deployment"
 
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git
 RUN npm uninstall @angular/cli -g
