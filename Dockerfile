@@ -20,7 +20,7 @@ RUN npm cache clean
 RUN npm install -g @angular/cli@latest
 
 #Clone the project
-RUN git clone https://github.com/phnmnl/ng2-phenomenal-portal.git
+RUN git clone -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
 WORKDIR /ng2-phenomenal-portal
 RUN npm install --save-dev @angular/cli@latest 
 RUN npm install 
