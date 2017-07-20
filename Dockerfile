@@ -5,7 +5,7 @@
 FROM node:latest
 
 # File Author / Maintainer
-MAINTAINER Sijin He ( sijin@ebi.ac.uk )
+MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="Metadata backend for the PhenoMeNal Portal"
 LABEL software="PhenoMeNal Portal"
