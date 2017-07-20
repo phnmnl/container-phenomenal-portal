@@ -2,7 +2,7 @@
 # Dockerfile to build PhenoMeNal Portal images
 ############################################################
 # Set the base image to node
-FROM node:latest
+FROM node:7.10
 
 # File Author / Maintainer
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
@@ -16,16 +16,17 @@ LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
 LABEL tags="Cloud deployment"
 
-RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git
-RUN npm uninstall @angular/cli -g
-RUN npm install typings -g
-RUN npm cache clean
-RUN npm install -g @angular/cli@latest
+RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git && \
+    npm uninstall @angular/cli -g && \
+    npm install typings -g && \
+    npm cache clean --force && npm install -g @angular/cli@1.0.0-rc.2 && \
+    apt-get autoremove -y && apt-get clean && \
+    rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clone the project
 RUN git clone -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
 WORKDIR /ng2-phenomenal-portal
-RUN npm install --save-dev @angular/cli@latest 
+RUN npm install --save-dev @angular/cli@1.0.0-rc.2
 RUN npm install 
 RUN ng build --prod
 RUN cp -r dist/* /usr/share/nginx/html
