@@ -24,11 +24,12 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git &&
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clone the project
-RUN git clone -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
+RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
 WORKDIR /ng2-phenomenal-portal
 RUN npm install --save-dev @angular/cli@1.0.0-rc.2
 RUN npm install 
 RUN ng build --prod
 RUN cp -r dist/* /usr/share/nginx/html
+RUN chmod u+x src/setup_backend_host.sh
 COPY ./default /etc/nginx/sites-enabled
 EXPOSE 80
