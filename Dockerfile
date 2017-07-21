@@ -30,6 +30,6 @@ RUN npm install --save-dev @angular/cli@1.0.0-rc.2
 RUN npm install 
 RUN ng build --prod
 RUN cp -r dist/* /usr/share/nginx/html
-RUN chmod u+x src/setup_backend_host.sh
+RUN chmod u+x setup_backend_host.sh
 COPY ./default /etc/nginx/sites-enabled
 EXPOSE 80
