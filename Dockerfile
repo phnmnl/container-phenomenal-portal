@@ -19,18 +19,19 @@ LABEL tags="Cloud deployment"
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git && \
     npm uninstall @angular/cli -g && \
     npm install typings -g && \
-    npm cache clean --force && npm install -g @angular/cli@1.0.0-rc.2 && \
+    npm cache clean --force && npm install -g @angular/cli@latest && \
     apt-get autoremove -y && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clone the project
 RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
 WORKDIR /ng2-phenomenal-portal
-RUN npm install --save-dev @angular/cli@1.0.0-rc.2
+RUN npm install --save-dev @angular/cli@latest
 RUN npm install 
-RUN ng build --prod
+RUN ng build --env=prod
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
 RUN chmod u+x setup_backend_host.sh
 COPY ./default /etc/nginx/sites-enabled
+COPY reverse-proxy.conf /etc/nginx/sites-available/reverse-proxy.conf
 EXPOSE 80
