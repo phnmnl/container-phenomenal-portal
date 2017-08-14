@@ -10,13 +10,13 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 LABEL Description="Metadata backend for the PhenoMeNal Portal"
 LABEL software="PhenoMeNal Portal"
 LABEL software.version="1.0.0-rc.0"
-LABEL version="0.3.1"
+LABEL version="0.3"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
 LABEL tags="Cloud deployment"
 
-RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git && \
+RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq && \
     npm uninstall @angular/cli -g && \
     npm install typings -g && \
     npm cache clean --force && npm install -g @angular/cli@latest && \
