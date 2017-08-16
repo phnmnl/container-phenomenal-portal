@@ -16,7 +16,7 @@ LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
 LABEL tags="Cloud deployment"
 
-RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq && \
+RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
     npm uninstall @angular/cli -g && \
     npm install typings -g && \
     npm cache clean --force && npm install -g @angular/cli@latest && \
@@ -24,7 +24,8 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clone the project
-RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
+#RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
+RUN wget https://github.com/phnmnl/ng2-phenomenal-portal/archive/1.0.0.zip && unzip 1.0.0.zip && mv ng2-phenomenal-portal-1.0.0 ng2-phenomenal-portal
 WORKDIR /ng2-phenomenal-portal
 RUN npm install --save-dev @angular/cli@latest
 RUN npm install 
