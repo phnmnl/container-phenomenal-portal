@@ -36,6 +36,17 @@ server {
 		# include /etc/nginx/naxsi.rules
 	}
 
+    location /api {
+    	proxy_pass http://localhost:8888/api;
+    }
+    
+    location /php-phenomenal-portal-app-library {
+    	proxy_pass http://localhost:80/php-phenomenal-portal-app-library;
+    }
+
+    location /php-phenomenal-portal-wiki {
+    	proxy_pass http://wikihost:80/php-phenomenal-portal-wiki;
+    }
 
 	# Only for nginx-naxsi used with nginx-naxsi-ui : process denied requests
 	#location /RequestDenied {
