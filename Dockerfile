@@ -24,8 +24,8 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
 #Clone the project
-#RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
-RUN wget https://github.com/phnmnl/ng2-phenomenal-portal/archive/1.1.1.zip && unzip 1.1.1.zip && mv ng2-phenomenal-portal-1.1.1 ng2-phenomenal-portal
+RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
+#RUN wget https://github.com/phnmnl/ng2-phenomenal-portal/archive/1.1.1.zip && unzip 1.1.1.zip && mv ng2-phenomenal-portal-1.1.1 ng2-phenomenal-portal
 WORKDIR /ng2-phenomenal-portal
 RUN npm install --save-dev @angular/cli@latest
 RUN npm install 
