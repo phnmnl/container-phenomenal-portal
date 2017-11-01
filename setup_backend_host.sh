@@ -11,4 +11,4 @@ sed "s@http://wikihost:80@http://$WIKI_HOST:80@g" /tmp/default_backup > $ROOT_DI
 # Setup dist file for galaxy URL and galaxy API Key injected
 CONFIG_DIR=/usr/share/nginx/html/assets/config
 cp $CONFIG_DIR/config.development.json /tmp/config.backup
-jq ".galaxy_url = \"$PORTAL_GALAXY_URL\" | .galaxy_api_key = \"$PORTAL_GALAXY_API_KEY\" | .deployment_repo_url = \"$CLOUD_DEPLOY_GIT_REPO\" | .announcement = \"$PORTAL_ANNOUNCEMENT\" | .tsi_portal_url = \"$TSI_PORTAL_URL\" " /tmp/config.backup > $CONFIG_DIR/config.development.json
+jq ".galaxy_url = \"$PORTAL_GALAXY_URL\" | .galaxy_api_key = \"$PORTAL_GALAXY_API_KEY\" | .deployment_repo_url = \"$CLOUD_DEPLOY_GIT_REPO\" | .announcement = \"$PORTAL_ANNOUNCEMENT\" | .tsi_portal_url = \"$TSI_PORTAL_URL\" | .aap_url = \"$AAP_URL\"" /tmp/config.backup > $CONFIG_DIR/config.development.json
