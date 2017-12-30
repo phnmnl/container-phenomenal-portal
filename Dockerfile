@@ -16,6 +16,9 @@ LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
 LABEL tags="Cloud deployment"
 
+# Optional arguments to choose the Git repo & branch to use at build time
+ARG git_repo=kikkomep/ng2-phenomenal-portal
+ARG git_branch=feature/signin_and_user_profile
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
     npm uninstall @angular/cli -g && \
     npm install typings -g && \
@@ -23,8 +26,9 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq
     apt-get autoremove -y && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-#Clone the project
-RUN git clone --depth 1 --single-branch -b develop https://github.com/phnmnl/ng2-phenomenal-portal.git
+# Clone git repository
+RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&2 && \
+    git clone --depth 1 --single-branch -b ${git_branch} https://github.com/${git_repo}.git
 #RUN wget https://github.com/phnmnl/ng2-phenomenal-portal/archive/1.1.3.zip && unzip 1.1.3.zip && mv ng2-phenomenal-portal-1.1.3 ng2-phenomenal-portal
 WORKDIR /ng2-phenomenal-portal
 RUN npm install --save-dev @angular/cli@latest
