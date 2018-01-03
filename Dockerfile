@@ -17,8 +17,8 @@ LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master
 LABEL tags="Cloud deployment"
 
 # Optional arguments to choose the Git repo & branch to use at build time
-ARG git_repo=kikkomep/ng2-phenomenal-portal
-ARG git_branch=feature/signin_and_user_profile
+ARG git_repo=phnmnl/ng2-phenomenal-portal
+ARG git_branch=master
 
 # Install software requirements
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
