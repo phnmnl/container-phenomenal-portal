@@ -18,7 +18,7 @@ LABEL tags="Cloud deployment"
 
 # Optional arguments to choose the Git repo & branch to use at build time
 ARG git_repo=phnmnl/ng2-phenomenal-portal
-ARG git_branch=master
+ARG git_branch=develop
 
 # Install software requirements
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
