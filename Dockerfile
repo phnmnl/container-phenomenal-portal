@@ -9,8 +9,8 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="PhenoMeNal Portal main container"
 LABEL software="PhenoMeNal Portal"
-LABEL software.version="1.1.3"
-LABEL version="0.4"
+LABEL software.version="2.0.0"
+LABEL version="0.5"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
