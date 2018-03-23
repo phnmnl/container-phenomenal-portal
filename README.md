@@ -23,9 +23,20 @@ The PhenoMeNal Virtual Research Environment (VRE), aka. Virtual Research Communi
 
 ## Screenshots
 
-Screen shots obtained from the original PhenoMeNal Portal page.
-![screenshot](screenshots/s1.png)
-![screenshot](screenshots/s2.png)
+##### Home Page of the PhenoMeNal Portal
+![screenshot](screenshots/home-p1.png)
+![screenshot](screenshots/home-p2.png)
+
+---
+
+##### App Library
+![screenshot](screenshots/app-lib.png)
+
+---
+
+##### CRE Dashboard
+![screenshot](screenshots/cre-dashboard.png)
+
 
 ## Tool Authors
 
