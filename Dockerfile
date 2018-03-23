@@ -35,7 +35,7 @@ RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&
 
 # Build and deploy the portal
 WORKDIR /ng2-phenomenal-portal
-RUN npm install
+RUN npm install && npm install typescript@'>=2.1.0 <2.4.0'
 RUN ng build --env=prod
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
