@@ -46,7 +46,8 @@ The PhenoMeNal Virtual Research Environment (VRE), aka. Virtual Research Communi
 
 ## Container Contributors
 
-- [Sijin He](https://github.com/sh107) (EMBL-EBI)- [Pablo Moreno](https://github.com/pcm32) (EMBL-EBI)
+- [Sijin He](https://github.com/sh107) (EMBL-EBI)
+- [Pablo Moreno](https://github.com/pcm32) (EMBL-EBI)
 - [Marco Enrico Piras](https://github.com/kikkomep) (CRS4)
 
 ## Website
