@@ -41,10 +41,13 @@ The PhenoMeNal Virtual Research Environment (VRE), aka. Virtual Research Communi
 ## Tool Authors
 
 - Sijin He (EMBL-EBI)
+- Pablo Moreno (EMBL-EBI)
+- Marco Enrico Piras (CRS4)
 
 ## Container Contributors
 
-- [Sijin He](https://github.com/sh107) (EMBL-EBI)
+- [Sijin He](https://github.com/sh107) (EMBL-EBI)- [Pablo Moreno](https://github.com/pcm32) (EMBL-EBI)
+- [Marco Enrico Piras](https://github.com/kikkomep) (CRS4)
 
 ## Website
 
@@ -71,11 +74,10 @@ For direct docker usage:
 docker run -d -p 3000:80 -it container-registry.phenomenal-h2020.eu/phnmnl/phenomenal-portal nginx -g 'daemon off;'
 ```
 
-## Publications
 
 <!-- Guidance:
 Use AMA style publications as a list (you can export AMA from PubMed, on the Formats: Citation link when looking at the entry).
 IMPORTANT: Publications sectio must be placed at the end and cannot be emptied!
 -->
 
-- 
+
