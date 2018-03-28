@@ -9,7 +9,7 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="PhenoMeNal Portal main container"
 LABEL software="PhenoMeNal Portal"
-LABEL software.version="2.1.0"
+LABEL software.version="2.2.0"
 LABEL version="0.5"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
