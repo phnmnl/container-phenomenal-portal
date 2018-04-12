@@ -9,7 +9,7 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="PhenoMeNal Portal main container"
 LABEL software="PhenoMeNal Portal"
-LABEL software.version="2.2.0"
+LABEL software.version="2.2.1"
 LABEL version="0.5"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
@@ -36,7 +36,7 @@ RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&
 # Build and deploy the portal
 WORKDIR /ng2-phenomenal-portal
 RUN npm install && npm install typescript@'>=2.1.0 <2.4.0' && npm install ng-block-ui@next --save
-RUN ng build --env=prod
+RUN ng build --prod --env=prod
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
 RUN chmod u+x setup_backend_host.sh
