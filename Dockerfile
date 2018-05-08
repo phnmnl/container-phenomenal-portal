@@ -2,7 +2,7 @@
 # Dockerfile to build PhenoMeNal Portal images
 ############################################################
 # Set the base image to node
-FROM node:7.10
+FROM node:8.11.1
 
 # File Author / Maintainer
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
