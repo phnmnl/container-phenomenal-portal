@@ -35,7 +35,7 @@ RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&
 
 # Build and deploy the portal
 WORKDIR /ng2-phenomenal-portal
-RUN ng build --prod --env=prod
+RUN npm install && ng build --prod --env=prod && npm cache clean --force
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
 RUN chmod u+x setup_backend_host.sh
