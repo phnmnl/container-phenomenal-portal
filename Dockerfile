@@ -2,15 +2,15 @@
 # Dockerfile to build PhenoMeNal Portal images
 ############################################################
 # Set the base image to node
-FROM node:7.10
+FROM node:8.11.1
 
 # File Author / Maintainer
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 LABEL Description="PhenoMeNal Portal main container"
 LABEL software="PhenoMeNal Portal"
-LABEL software.version="2.2.2"
-LABEL version="0.5"
+LABEL software.version="2.2.3"
+LABEL version="1.0"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
@@ -35,8 +35,7 @@ RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&
 
 # Build and deploy the portal
 WORKDIR /ng2-phenomenal-portal
-RUN npm install && npm install typescript@'>=2.1.0 <2.4.0' && npm install ng-block-ui@next --save
-RUN ng build --prod --env=prod
+RUN npm install && ng build --prod --env=prod && npm cache clean --force
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
 RUN chmod u+x setup_backend_host.sh
