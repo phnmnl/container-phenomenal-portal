@@ -7,18 +7,25 @@ FROM node:8.11.1
 # File Author / Maintainer
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
+# container version
+ENV version="1.1"
+
+# software version
+ENV software_version="2.3.0b0"
+
+# Metadata
 LABEL Description="PhenoMeNal Portal main container"
 LABEL software="PhenoMeNal Portal"
-LABEL software.version="2.2.3"
-LABEL version="1.0"
 LABEL website="https://portal.phenomenal-h2020.eu/"
 LABEL documentation="https://portal.phenomenal-h2020.eu/"
 LABEL license="https://github.com/phnmnl/container-phenomenal-portal/blob/master/License.txt"
 LABEL tags="Cloud deployment"
+LABEL version="${version}"
+LABEL software.version="${software_version}"
 
 # Optional arguments to choose the Git repo & branch to use at build time
 ARG git_repo=phnmnl/ng2-phenomenal-portal
-ARG git_branch=develop
+ARG git_branch="v${software_version}"
 
 # Install software requirements
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
