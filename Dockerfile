@@ -31,11 +31,10 @@ RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq
 # Clone git repository
 RUN echo "Cloning branch '${git_branch}' of the Git repository '${git_repo}'" >&2 && \
     git clone --depth 1 --single-branch -b ${git_branch} https://github.com/${git_repo}.git
-#RUN wget https://github.com/phnmnl/ng2-phenomenal-portal/archive/1.1.3.zip && unzip 1.1.3.zip && mv ng2-phenomenal-portal-1.1.3 ng2-phenomenal-portal
 
 # Build and deploy the portal
 WORKDIR /ng2-phenomenal-portal
-RUN npm install && ng build --prod --env=prod && npm cache clean --force
+RUN npm install && ng build --prod --env=prod
 RUN cp -r dist/* /usr/share/nginx/html
 COPY setup_backend_host.sh setup_backend_host.sh
 RUN chmod u+x setup_backend_host.sh
