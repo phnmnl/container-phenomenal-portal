@@ -2,7 +2,7 @@
 ![Logo](portal-logo.png)
 
 # PhenoMeNal Portal
-Version: 2.2.1
+Version: 1.1
 
 ## Short Description
 
