@@ -8,7 +8,7 @@ FROM node:8.11.1
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 # container version
-ENV version="1.1"
+ENV version="1.2"
 
 # software version
 ENV software_version="3.0.0-rc2a"
