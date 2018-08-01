@@ -8,10 +8,10 @@ FROM node:8.11.1
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 # container version
-ENV version="1.1"
+ENV version="1.2"
 
 # software version
-ENV software_version="2.3.1"
+ENV software_version="3.0.0"
 
 # Metadata
 LABEL Description="PhenoMeNal Portal main container"
@@ -31,7 +31,7 @@ ARG git_branch="v${software_version}"
 RUN apt-get -y update && apt-get install --no-install-recommends -y nginx git jq unzip && \
     npm uninstall @angular/cli -g && \
     npm install typings -g && \
-    npm cache clean --force && npm install -g @angular/cli@latest && \
+    npm cache clean --force && npm install -g @angular/cli@6.0.0 && \
     apt-get autoremove -y && apt-get clean && \
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
