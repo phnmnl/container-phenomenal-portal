@@ -11,7 +11,7 @@ MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 ENV version="1.2"
 
 # software version
-ENV software_version="3.0.1"
+ENV software_version="3.0.2"
 
 # Metadata
 LABEL Description="PhenoMeNal Portal main container"
