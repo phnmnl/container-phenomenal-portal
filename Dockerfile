@@ -2,16 +2,16 @@
 # Dockerfile to build PhenoMeNal Portal images
 ############################################################
 # Set the base image to node
-FROM node:8.11.1
+FROM node:8.16.0
 
 # File Author / Maintainer
 MAINTAINER PhenoMeNal-H2020 Project ( phenomenal-h2020-users@googlegroups.com )
 
 # container version
-ENV version="1.2"
+ENV version="1.3"
 
 # software version
-ENV software_version="3.2.0"
+ENV software_version="3.2.1"
 
 # Metadata
 LABEL Description="PhenoMeNal Portal main container"
